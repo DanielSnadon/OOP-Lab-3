@@ -2,6 +2,13 @@
 
 // Родительский-Класс-Фигура
 
+// Конструктор
+
+Figure::Figure(unsigned int pointsAmount) : amountOfPoints(pointsAmount) {
+    amountOfPoints = 0;
+    points = new Point[amountOfPoints];
+}
+
 // Деструктор
 Figure::~Figure() {
     delete[] points;

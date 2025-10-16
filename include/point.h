@@ -12,9 +12,7 @@ class Point {
 
         Point() = default;
         Point(double x, double y);
-
-        bool operator==(const Point& otherPoint) const;
-
+        
         friend std::ostream& operator<<(std::ostream& os, const Point& p);
 };
 

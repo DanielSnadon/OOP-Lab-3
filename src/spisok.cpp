@@ -1,7 +1,7 @@
 #include "../include/spisok.h"
 
 // Класс-Список.
-Spisok::Spisok() : maxAmount(amountOfFigures), amountOfFigures(0) {
+Spisok::Spisok(unsigned int spisokSize) : amountOfFigures(0), maxAmount(spisokSize) {
     figures = new Figure*[maxAmount];
     for (unsigned int i = 0; i < maxAmount; i++) {
         figures[i] = nullptr;
@@ -14,8 +14,6 @@ Spisok::~Spisok() {
 
 void Spisok::remove(unsigned int index) {
     if (index < amountOfFigures) {
-        delete figures[index];
-        
         for (unsigned int i = index; i < amountOfFigures - 1; i++) {
             figures[i] = figures[i + 1];
         }
@@ -24,16 +22,24 @@ void Spisok::remove(unsigned int index) {
     }
 }
 
+void Spisok::addFigure(Figure* fig) {
+    if (amountOfFigures < maxAmount) {
+        figures[amountOfFigures++] = fig;
+    } else {
+        throw std::overflow_error("Массив фигур перполнен!");
+    }
+}
+
 void Spisok::allPrint() const {
     std::cout << "----------Фигуры----------" << std::endl;
     for (unsigned int i = 0; i < amountOfFigures; i++) {
-        std::cout << "Фигура " << i << std::endl;
+        std::cout << "Фигура " << i << ": " << *figures[i] << std::endl;
         
         Point center = figures[i]->center();
-        std::cout << "  Центр: (" << center.x << ", " << center.y << ")" << std::endl;
+        std::cout << "Центр: (" << center.x << ", " << center.y << ")" << std::endl;
         
         double area = figures[i]->area();
-        std::cout << "  Площадь: " << area << std::endl;
+        std::cout << "Площадь: " << area << std::endl;
         
         std::cout << "--------------------------" << std::endl;
     }
@@ -42,7 +48,15 @@ void Spisok::allPrint() const {
 double Spisok::allArea() const {
     double otv = 0.0;
     for (unsigned int i = 0; i < amountOfFigures; i++) {
-        otv += figures[i]->area();
+        otv += static_cast<double>(*figures[i]);
     }
     return otv;
+}
+
+unsigned int Spisok::getSize() const {
+    return amountOfFigures;
+}
+
+unsigned int Spisok::getMaxSize() const {
+    return maxAmount;
 }

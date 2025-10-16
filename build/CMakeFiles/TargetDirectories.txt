@@ -1,0 +1,4 @@
+/home/snadon/OOP-Lab-3/build/CMakeFiles/Task3.dir
+/home/snadon/OOP-Lab-3/build/CMakeFiles/tests.dir
+/home/snadon/OOP-Lab-3/build/CMakeFiles/edit_cache.dir
+/home/snadon/OOP-Lab-3/build/CMakeFiles/rebuild_cache.dir

@@ -3,6 +3,13 @@
 
 // Дочерний-Класс-Квадрат.
 
+// Конструктор
+
+Square::Square() {
+    amountOfPoints = 4;
+    points = new Point[4]();
+}
+
 // Area
 double Square::area() const {
     double a = std::sqrt(std::pow((points[1].x - points[0].x), 2)

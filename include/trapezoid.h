@@ -8,6 +8,8 @@
 
 class Trapezoid : public Figure {
     public:
+        Trapezoid();
+        
         double area() const override;
 
         bool operator==(const Figure& otherFig) const override;

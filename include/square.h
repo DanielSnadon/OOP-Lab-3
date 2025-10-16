@@ -8,6 +8,8 @@
 
 class Square : public Figure {
     public:
+        Square();
+        
         double area() const override;
 
         bool operator==(const Figure& otherFig) const override;

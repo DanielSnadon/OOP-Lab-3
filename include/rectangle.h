@@ -8,6 +8,8 @@
 
 class Rectangle : public Figure {
     public:
+        Rectangle();
+        
         double area() const override;
 
         bool operator==(const Figure& otherFig) const override;

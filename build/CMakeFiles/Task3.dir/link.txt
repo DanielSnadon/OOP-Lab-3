@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/Task3.dir/link.d CMakeFiles/Task3.dir/src/main.cpp.o CMakeFiles/Task3.dir/src/point.cpp.o CMakeFiles/Task3.dir/src/figure.cpp.o CMakeFiles/Task3.dir/src/square.cpp.o CMakeFiles/Task3.dir/src/rectangle.cpp.o CMakeFiles/Task3.dir/src/trapezoid.cpp.o CMakeFiles/Task3.dir/src/spisok.cpp.o -o Task3

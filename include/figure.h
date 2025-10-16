@@ -7,6 +7,7 @@
 
 class Figure {
     public:
+        Figure(unsigned int pointsAmount = 4);
         ~Figure();
 
         virtual double area() const = 0;
